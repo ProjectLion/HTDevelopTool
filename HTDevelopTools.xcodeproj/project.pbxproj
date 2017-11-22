@@ -85,6 +85,7 @@
 		182737F91FC55ECB00ED3AFB /* HTCustomNavBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCustomNavBarVC.m; sourceTree = "<group>"; };
 		1827380B1FC55F0800ED3AFB /* HTCustomVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTCustomVCViewController.h; sourceTree = "<group>"; };
 		1827380C1FC55F0800ED3AFB /* HTCustomVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTCustomVCViewController.m; sourceTree = "<group>"; };
+		1827380F1FC5704000ED3AFB /* HTOtherTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTOtherTools.h; sourceTree = "<group>"; };
 		4F329B422203F0B6ED940D41 /* Pods-HTDevelopTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTools/Pods-HTDevelopTools.debug.xcconfig"; sourceTree = "<group>"; };
 		B1566904F60CE7BF62C83EEC /* Pods-HTDevelopTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTools/Pods-HTDevelopTools.release.xcconfig"; sourceTree = "<group>"; };
 		E006EB8DEB96700D8AABD0B6 /* libPods-HTDevelopTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTDevelopTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -273,6 +274,7 @@
 		182737F41FC55ECB00ED3AFB /* OtherTools */ = {
 			isa = PBXGroup;
 			children = (
+				1827380F1FC5704000ED3AFB /* HTOtherTools.h */,
 			);
 			path = OtherTools;
 			sourceTree = "<group>";
