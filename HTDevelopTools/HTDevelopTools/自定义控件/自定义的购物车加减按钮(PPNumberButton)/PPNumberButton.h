@@ -31,6 +31,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger{
+    PPNumberButtonStyle_horizon = 0,
+    PPNumberButtonStyle_vertical
+}PPNumberButtonStyle;
+
 @class PPNumberButton;
 @protocol PPNumberButtonDelegate <NSObject>
 @optional
@@ -51,14 +56,17 @@ IB_DESIGNABLE
 @interface PPNumberButton : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame;
-+ (instancetype)numberButtonWithFrame:(CGRect)frame;
 
++ (instancetype)numberButtonWithFrame:(CGRect)frame;
++ (instancetype)numberButtonWithStyle:(PPNumberButtonStyle)style frame:(CGRect)frame;
 /** 加减按钮的Block回调*/
 @property (nonatomic, copy) void(^resultBlock)(NSInteger number, BOOL increaseStatus/* 是否为加状态*/);
 /** 代理*/
 @property (nonatomic, weak) id<PPNumberButtonDelegate> delegate;
 
 #pragma mark - 自定义样式属性设置
+/** 按钮排列样式 default is PPNumberButtonStyle_horizon*/
+@property (nonatomic, assign, readonly)IBInspectable PPNumberButtonStyle style;
 /** 是否开启抖动动画, default is NO*/
 @property (nonatomic, assign ) IBInspectable BOOL shakeAnimation;
 /** 为YES时,初始化时减号按钮隐藏(饿了么/百度外卖/美团外卖按钮模式),default is NO*/

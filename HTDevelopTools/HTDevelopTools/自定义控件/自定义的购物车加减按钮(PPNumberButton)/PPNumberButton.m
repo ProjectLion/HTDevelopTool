@@ -43,6 +43,9 @@
 {
     CGFloat _width;     // 控件自身的宽
     CGFloat _height;    // 控件自身的高
+    CGFloat _viewWidth; // 当控件自身的宽小于等于2倍高的时候将三个控件宽高设置为相等
+    CGFloat _viewY;     // 当控件自身的宽小于等于2倍高的时候的Y坐标
+    CGFloat _viewX;     // 当控件自身的宽小于等于2倍高的时候的X坐标
 }
 /** 快速加减定时器*/
 @property (nonatomic, strong) NSTimer *timer;
@@ -82,6 +85,11 @@
     return [[PPNumberButton alloc] initWithFrame:frame];
 }
 
++ (instancetype)numberButtonWithStyle:(PPNumberButtonStyle)style frame:(CGRect)frame{
+    PPNumberButton *numberButton = [PPNumberButton numberButtonWithFrame:frame];
+    numberButton.style = style;
+    return numberButton;
+}
 #pragma mark - 设置UI子控件
 - (void)setupUI
 {
@@ -127,17 +135,56 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
     _width =  self.frame.size.width;
     _height = self.frame.size.height;
-    _textField.frame = CGRectMake(_height, 0, _width - 2*_height, _height);
-    _increaseBtn.frame = CGRectMake(_width - _height, 0, _height, _height);
-    
-    if (_decreaseHide && _textField.text.integerValue < _minValue) {
-        _decreaseBtn.frame = CGRectMake(_width-_height, 0, _height, _height);
-    } else {
-        _decreaseBtn.frame = CGRectMake(0, 0, _height, _height);
+    if (self.style == PPNumberButtonStyle_horizon) {
+        if (_width <= 2 * _height) {
+            _viewWidth = _width / 3;
+            _viewY = (_height - _viewWidth)/2;
+            _textField.frame = CGRectMake(_viewWidth, _viewY, _viewWidth, _viewWidth);
+            _increaseBtn.frame = CGRectMake(_width - _viewWidth, _viewY, _viewWidth, _viewWidth);
+        }else{
+            _textField.frame = CGRectMake(_height, 0, _width - 2*_height, _height);
+            _increaseBtn.frame = CGRectMake(_width - _height, 0, _height, _height);
+        }
+        
+        if (_decreaseHide && _textField.text.integerValue < _minValue && _width <= 2 * _height) {
+            _decreaseBtn.frame = CGRectMake(_width-_viewWidth, _viewY, _viewWidth, _viewWidth);
+        } else if (_width <= 2 * _height){
+            _decreaseBtn.frame = CGRectMake(0, _viewY, _viewWidth, _viewWidth);
+        } else{
+            _decreaseBtn.frame = CGRectMake(0, 0, _height, _height);
+        }
+    }else if (self.style == PPNumberButtonStyle_vertical){
+        if (_height <= 2 * _width) {
+            _viewWidth = _height / 3;
+            _viewX = (_width - _viewWidth) / 2;
+            _textField.frame = CGRectMake(_viewX, _viewWidth, _viewWidth, _viewWidth);
+            _increaseBtn.frame = CGRectMake(_viewX, 0, _viewWidth, _viewWidth);
+        }else{
+            _textField.frame = CGRectMake(0, _width, _width, _height - 2 * _width);
+            _increaseBtn.frame = CGRectMake(0, 0, _width, _width);
+        }
+        
+        if (_decreaseHide && _textField.text.integerValue < _minValue && _height <= 2 * _width) {
+            _decreaseBtn.frame = CGRectMake(_viewX, 0, _viewWidth, _viewWidth);
+        } else if (_height <= 2 * _width){
+            _decreaseBtn.frame = CGRectMake(_viewX, _height - _viewWidth, _viewWidth, _viewWidth);
+        } else{
+            _decreaseBtn.frame = CGRectMake(0, _height - _width, _width, _width);
+        }
+        
     }
+//    _width =  self.frame.size.width;
+//    _height = self.frame.size.height;
+//    _textField.frame = CGRectMake(_height, 0, _width - 2*_height, _height);
+//    _increaseBtn.frame = CGRectMake(_width - _height, 0, _height, _height);
+//
+//    if (_decreaseHide && _textField.text.integerValue < _minValue) {
+//        _decreaseBtn.frame = CGRectMake(_width-_height, 0, _height, _height);
+//    } else {
+//        _decreaseBtn.frame = CGRectMake(0, 0, _height, _height);
+//    }
 }
 
 #pragma mark - UITextFieldDelegate
@@ -177,7 +224,21 @@
             [self rotationAnimationMethod];
             [UIView animateWithDuration:0.3f animations:^{
                 _decreaseBtn.alpha = 1;
-                _decreaseBtn.frame = CGRectMake(0, 0, _height, _height);
+                if (self.style == PPNumberButtonStyle_horizon) {
+                    if (_width <= _height * 2) {
+                        _decreaseBtn.frame = CGRectMake(0, _viewY, _viewWidth, _viewWidth);
+                    }else{
+                        _decreaseBtn.frame = CGRectMake(0, 0, _height, _height);
+                    }
+                }else if (self.style == PPNumberButtonStyle_vertical){
+                    if (_height <= _width * 2) {
+                        _decreaseBtn.frame = CGRectMake(_viewX, _height - _viewWidth, _viewWidth, _viewWidth);
+                    }else{
+                        _decreaseBtn.frame = CGRectMake(0, _height - _width, _width, _width);
+                    }
+                    
+                }
+                
             } completion:^(BOOL finished) {
                 _textField.hidden = NO;
             }];
@@ -211,7 +272,20 @@
             
             [UIView animateWithDuration:0.3f animations:^{
                 _decreaseBtn.alpha = 0;
-                _decreaseBtn.frame = CGRectMake(_width-_height, 0, _height, _height);
+                if (self.style == PPNumberButtonStyle_horizon) {
+                    if (_width <= _height * 2) {
+                        _decreaseBtn.frame = CGRectMake(_width-_viewWidth, _viewY, _viewWidth, _viewWidth);
+                    }else{
+                        _decreaseBtn.frame = CGRectMake(_width-_height, 0, _height, _height);
+                    }
+                }else if (self.style == PPNumberButtonStyle_vertical){
+                    if (_height <= _width * 2) {
+                        _decreaseBtn.frame = CGRectMake(_viewX, 0, _viewWidth, _viewWidth);
+                    }else{
+                        _decreaseBtn.frame = CGRectMake(0, 0, _width, _width);
+                    }
+                }
+                
             }];
 
             return;
@@ -248,6 +322,11 @@
 }
 
 #pragma mark - 加减按钮的属性设置
+
+- (void)setStyle:(PPNumberButtonStyle)style{
+    _style = style;
+}
+
 - (void)setDecreaseHide:(BOOL)decreaseHide
 {
     // 当按钮为"减号按钮隐藏模式(饿了么/百度外卖/美团外卖按钮样式)"
@@ -280,15 +359,21 @@
 - (void)setBorderColor:(UIColor *)borderColor
 {
     _borderColor = borderColor;
-    
-    self.layer.borderWidth = 0.5;
-    self.layer.borderColor = [borderColor CGColor];
-    
     _decreaseBtn.layer.borderWidth = 0.5;
     _decreaseBtn.layer.borderColor = [borderColor CGColor];
     
     _increaseBtn.layer.borderWidth = 0.5;
     _increaseBtn.layer.borderColor = [borderColor CGColor];
+    if (self.frame.size.width <= self.frame.size.height * 2) {
+        _textField.layer.borderColor = [borderColor CGColor];
+        _textField.layer.borderWidth = 0.5;
+        return;
+    }
+    
+    self.layer.borderWidth = 0.5;
+    self.layer.borderColor = [borderColor CGColor];
+    
+    
 }
 
 - (void)setButtonTitleFont:(CGFloat)buttonTitleFont
@@ -349,13 +434,24 @@
 /// 抖动动画
 - (void)shakeAnimationMethod
 {
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
-    CGFloat positionX = self.layer.position.x;
-    animation.values = @[@(positionX-10),@(positionX),@(positionX+10)];
-    animation.repeatCount = 3;
-    animation.duration = 0.07;
-    animation.autoreverses = YES;
-    [self.layer addAnimation:animation forKey:nil];
+    if (self.style == PPNumberButtonStyle_horizon) {
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
+        CGFloat positionX = self.layer.position.x;
+        animation.values = @[@(positionX-10),@(positionX),@(positionX+10)];
+        animation.repeatCount = 3;
+        animation.duration = 0.07;
+        animation.autoreverses = YES;
+        [self.layer addAnimation:animation forKey:nil];
+    }else{
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.y"];
+        CGFloat positionY = self.layer.position.y;
+        animation.values = @[@(positionY-10),@(positionY),@(positionY+10)];
+        animation.repeatCount = 3;
+        animation.duration = 0.07;
+        animation.autoreverses = YES;
+        [self.layer addAnimation:animation forKey:nil];
+    }
+    
 }
 /// 旋转动画
 - (void)rotationAnimationMethod

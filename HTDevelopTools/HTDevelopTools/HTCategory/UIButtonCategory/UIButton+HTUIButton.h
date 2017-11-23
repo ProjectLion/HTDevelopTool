@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, HTButtonImageStyle){
  @param color color
  @param state state
  */
-- (void)ht_setTitleColor:(nullable UIColor *)color forState:(UIControlState)state;
+- (void)ht_setTitleColor:(UIColor *)color forState:(UIControlState)state;
 
 /**
  设置按钮title(title可空 默认为@"")
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, HTButtonImageStyle){
  @param title title
  @param state state
  */
-- (void)ht_setTitle:(nullable NSString *)title forState:(UIControlState)state;
+- (void)ht_setTitle:(NSString *)title forState:(UIControlState)state;
 
 /**
  设置按钮的title font titleColor state
@@ -40,9 +40,9 @@ typedef NS_ENUM(NSUInteger, HTButtonImageStyle){
  @param title title         (可空 默认为@"")
  @param font font           (可空 默认为系统字体,大小12)
  @param color titleColor    (可空 默认为黑色)
- @param forState state
+ @param state state
  */
-- (void)ht_setButtonTitle:(nullable NSString *)title titleFont:(nullable UIFont *)font titleColor:(nullable UIColor *)color forState:(UIControlState)state;
+- (void)ht_setButtonTitle:(NSString *)title titleFont:(UIFont *)font titleColor:(UIColor *)color forState:(UIControlState)state;
 
 /**
  为按钮添加边框及圆角    (边框线的颜色可空,默认为黑色)
@@ -51,14 +51,14 @@ typedef NS_ENUM(NSUInteger, HTButtonImageStyle){
  @param borderColor 边框线的颜色
  @param corner 圆角大小
  */
-- (void)ht_setButtonBorderWithWidth:(CGFloat)borderWidth borderColor:(nullable UIColor *)borderColor corner:(CGFloat)corner;
+- (void)ht_setButtonBorderWithWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor corner:(CGFloat)corner;
 
 /**
  设置按钮图片
 
  @param imgString 图片名称(本地)
  */
-- (void)ht_setBtnImgWithString:(nullable NSString *)imgString state:(UIControlState)state;
+- (void)ht_setBtnImgWithString:(NSString *)imgString state:(UIControlState)state;
 /**
  利用UIButton的titleEdgeInsets和imageEdgeInsets来实现文字和图片的自由排列
  
@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger, HTButtonImageStyle){
  @param color 颜色
  @param state 状态
  */
-- (void)ht_setBtnBackGroundColor:(nullable UIColor *)color stata:(UIControlState)state;
+- (void)ht_setBtnBackGroundColor:(UIColor *)color stata:(UIControlState)state;
 
 /**
  用颜色设置按钮的背景图片
@@ -81,6 +81,6 @@ typedef NS_ENUM(NSUInteger, HTButtonImageStyle){
  @param color 颜色
  @return 纯色图
  */
-+ (nonnull UIImage *)ht_setImageWithColor:(nullable UIColor *)color;
++ (UIImage *)ht_setImageWithColor:(UIColor *)color;
 
 @end

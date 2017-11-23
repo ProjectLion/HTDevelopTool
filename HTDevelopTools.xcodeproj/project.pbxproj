@@ -89,6 +89,7 @@
 		1827380F1FC5704000ED3AFB /* HTOtherTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTOtherTools.h; sourceTree = "<group>"; };
 		182738111FC657C200ED3AFB /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
 		182738121FC657C200ED3AFB /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
+		182738141FC6603C00ED3AFB /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4F329B422203F0B6ED940D41 /* Pods-HTDevelopTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTools/Pods-HTDevelopTools.debug.xcconfig"; sourceTree = "<group>"; };
 		B1566904F60CE7BF62C83EEC /* Pods-HTDevelopTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTools/Pods-HTDevelopTools.release.xcconfig"; sourceTree = "<group>"; };
 		E006EB8DEB96700D8AABD0B6 /* libPods-HTDevelopTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTDevelopTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +140,7 @@
 				182737BE1FC55E7400ED3AFB /* Info.plist */,
 				182737BF1FC55E7400ED3AFB /* main.m */,
 				182737B61FC55E7400ED3AFB /* HTDevelopTools.xcdatamodeld */,
+				182738141FC6603C00ED3AFB /* Header.h */,
 			);
 			path = HTDevelopTools;
 			sourceTree = "<group>";
@@ -622,6 +624,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BE6X57F66G;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HTDevelopTools/Header.h";
 				INFOPLIST_FILE = HTDevelopTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HT.HTDevelopTools;
@@ -637,6 +640,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BE6X57F66G;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/HTDevelopTools/Header.h";
 				INFOPLIST_FILE = HTDevelopTools/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HT.HTDevelopTools;

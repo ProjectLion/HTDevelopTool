@@ -6,6 +6,11 @@
 //  Copyright © 2017年 HT. All rights reserved.
 //
 
+
+/**  需继承于该基类,且需要将视图添加到self.BGView上,而非self.view  */
+
+
+
 #import <UIKit/UIKit.h>
 
 typedef enum : NSUInteger {
@@ -15,6 +20,9 @@ typedef enum : NSUInteger {
     HTCustomNavBarVCStyle_BackTitleRightImage       //返回按钮 title 右边图片item
 }HTCustomNavBarVCStyle;
 
+/**
+ 自定义导航条的基类
+ */
 @interface HTCustomNavBarVC : UIViewController
 
 @property(nonatomic, weak)UIView *BGView;

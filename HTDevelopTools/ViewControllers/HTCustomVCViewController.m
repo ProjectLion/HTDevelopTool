@@ -7,6 +7,7 @@
 //
 
 #import "HTCustomVCViewController.h"
+#import "PPNumberButton.h"
 
 @interface HTCustomVCViewController ()
 
@@ -14,9 +15,62 @@
 
 @implementation HTCustomVCViewController
 
+- (instancetype)initCustomNavWithTitle:(NSString *)title backBtnImageStr:(NSString *)backImageStr{
+    if ([super initCustomNavWithTitle:title backBtnImageStr:backImageStr]) {
+        [self creat];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)creat{
+    PPNumberButton *numberButton = [PPNumberButton numberButtonWithFrame:CGRectMake(100, 300, 100, 80)];
+    numberButton.borderColor = [UIColor grayColor];
+    numberButton.increaseTitle = @"＋";
+    numberButton.decreaseTitle = @"－";
+    numberButton.currentNumber = 777;
+    numberButton.resultBlock = ^(NSInteger num ,BOOL increaseStatus){
+        NSLog(@"%ld",num);
+    };
+    [self.BGView addSubview:numberButton];
+    
+    PPNumberButton *numberButton1 = [PPNumberButton numberButtonWithStyle:PPNumberButtonStyle_vertical frame:CGRectMake(200, 200, 30, 100)];
+    // 初始化时隐藏减按钮
+    numberButton1.decreaseHide = YES;
+    numberButton1.increaseImage = [UIImage imageNamed:@"tuichu"];
+    numberButton1.decreaseImage = [UIImage imageNamed:@"tuichu"];
+    numberButton1.maxValue = 100;
+    numberButton1.shakeAnimation = YES;
+    numberButton1.currentNumber = 100;
+    numberButton1.resultBlock = ^(NSInteger num ,BOOL increaseStatus){
+        NSLog(@"%ld",num);
+    };
+    
+    [self.BGView addSubview:numberButton1];
+    
+    PPNumberButton *numberButton2 = [PPNumberButton numberButtonWithStyle:PPNumberButtonStyle_horizon frame:CGRectMake(100, 400, 100, 70)];
+    // 初始化时隐藏减按钮
+    numberButton2.decreaseHide = YES;
+    numberButton2.increaseImage = [UIImage imageNamed:@"tuichu"];
+    numberButton2.decreaseImage = [UIImage imageNamed:@"tuichu"];
+    numberButton2.currentNumber = 11;
+    numberButton2.resultBlock = ^(NSInteger num ,BOOL increaseStatus){
+        NSLog(@"%ld",num);
+    };
+    [self.BGView addSubview:numberButton2];
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(100, 100, 200, 50);
+    [btn ht_setButtonTitle:@"跳转" titleFont:FontWidth(14) titleColor:[UIColor redColor] forState:0];
+    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    [self.BGView addSubview:btn];
 }
 
 - (void)didReceiveMemoryWarning {
