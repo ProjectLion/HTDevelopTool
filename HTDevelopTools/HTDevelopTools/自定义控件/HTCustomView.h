@@ -17,5 +17,6 @@
 
 #import "HTCustomNavBarVC.h"
 #import "PPNumberButton.h"
+#import "HTSimpleCell.h"
 
 #endif

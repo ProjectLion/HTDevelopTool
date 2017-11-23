@@ -8,6 +8,7 @@
 
 #import "HTCustomVCViewController.h"
 #import "PPNumberButton.h"
+#import "HTTableViewController.h"
 
 @interface HTCustomVCViewController ()
 
@@ -69,8 +70,13 @@
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(100, 100, 200, 50);
     [btn ht_setButtonTitle:@"跳转" titleFont:FontWidth(14) titleColor:[UIColor redColor] forState:0];
-    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(clickBtn1) forControlEvents:UIControlEventTouchUpInside];
     [self.BGView addSubview:btn];
+}
+
+- (void)clickBtn1{
+    HTTableViewController *tableVC = [[HTTableViewController alloc] initCustomNavWithTitle:@"退出" backBtnImageStr:@"tuichu"];
+    [self presentViewController:tableVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

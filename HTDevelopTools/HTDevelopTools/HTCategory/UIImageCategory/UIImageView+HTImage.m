@@ -18,7 +18,11 @@
  @param placeholder 默认图片名字
  */
 - (void)ht_loadImageWithURL:(NSString *)url placeholder:(NSString *)placeholder{
-    [self yy_setImageWithURL:[NSURL URLWithString:url] placeholder:[UIImage imageNamed:placeholder] options:YYWebImageOptionSetImageWithFadeAnimation | YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressive  completion:nil];
+    if (placeholder == nil) {
+        [self yy_setImageWithURL:[NSURL URLWithString:url] placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation | YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressive  completion:nil];
+    }else{
+        [self yy_setImageWithURL:[NSURL URLWithString:url] placeholder:[UIImage imageNamed:placeholder] options:YYWebImageOptionSetImageWithFadeAnimation | YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressive  completion:nil];
+    }
 }
 /**
  加载本地图片

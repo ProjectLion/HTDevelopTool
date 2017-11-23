@@ -25,11 +25,16 @@
 /**
  设置cell分割线 & table背景色
  
- @param separatorStyle 分割线风格
+ @param separetorStyle 分割线风格
  @param separatorColor 分割线颜色
  @param backGroundColor 背景色
  */
 - (void)ht_setTableSeparatorStyle:(UITableViewCellSeparatorStyle)separetorStyle separatorColor:(UIColor *)separatorColor backGroundColor:(UIColor *)backGroundColor{
+    if (separetorStyle == 0) {
+        self.backgroundColor = backGroundColor;
+        self.separatorStyle = separetorStyle;
+        return;
+    }
     self.separatorStyle = separetorStyle;
     self.separatorColor = separatorColor;
     self.backgroundColor = backGroundColor;

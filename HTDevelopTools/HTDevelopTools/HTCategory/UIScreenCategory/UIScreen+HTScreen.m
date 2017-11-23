@@ -10,31 +10,58 @@
 
 @implementation UIScreen (HTScreen)
 
-
+/**
+ 获取设备屏幕size
+ 
+ @return 屏幕size
+ */
 + (CGSize)ht_screenSize{
     return [[UIScreen mainScreen] bounds].size;
 }
-
+/**
+ 获取设备屏幕宽
+ 
+ @return 屏幕宽
+ */
 + (CGFloat)ht_screenWidth{
     return [[UIScreen mainScreen] bounds].size.width;
 }
-
+/**
+ 获取设备屏幕高
+ 
+ @return 屏幕高
+ */
 + (CGFloat)ht_screenHeight{
     return [[UIScreen mainScreen] bounds].size.height;
 }
-
+/**
+ 适配，设置宽 (iPhone 6尺寸)
+ 
+ @param width CGFloat
+ @return 适配后的宽
+ */
 + (CGFloat)ht_setWidth:(CGFloat)width {
     CGFloat screenWidth = SCREEN_W;
     CGFloat newWidth = (width / 375.0) * screenWidth;
     return newWidth;
 }
-
+/**
+ 适配，设置高 (iPhone 6尺寸)
+ 
+ @param height CGFloat
+ @return 适配后的高
+ */
 + (CGFloat)ht_setHeight:(CGFloat)height {
     CGFloat screenHeight = SCREEN_H;
     CGFloat newHeight = (height / 667.0) * screenHeight;
     return newHeight;
 }
-
+/**
+ 根据颜色哈希值获取UIColor
+ 
+ @param haxStr 哈希值
+ @return UIColor
+ */
 + (UIColor *)ht_colorWithHaxString:(NSString *)haxStr{
     NSString *cString = [[haxStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
