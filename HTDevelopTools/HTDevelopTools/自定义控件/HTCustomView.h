@@ -16,5 +16,6 @@
 #ifdef __OBJC__
 
 #import "HTCustomNavBarVC.h"
+#import "PPNumberButton.h"
 
 #endif
