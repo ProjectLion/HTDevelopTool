@@ -32,6 +32,13 @@
 		182738091FC55ECB00ED3AFB /* HTCustomNavBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 182737F91FC55ECB00ED3AFB /* HTCustomNavBarVC.m */; };
 		1827380D1FC55F0800ED3AFB /* HTCustomVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1827380C1FC55F0800ED3AFB /* HTCustomVCViewController.m */; };
 		182738131FC657C200ED3AFB /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 182738121FC657C200ED3AFB /* PPNumberButton.m */; };
+		182738251FC6938800ED3AFB /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 182738171FC6938800ED3AFB /* MBProgressHUD+Add.m */; };
+		182738261FC6938800ED3AFB /* MHAsiNetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1827381B1FC6938800ED3AFB /* MHAsiNetworkHandler.m */; };
+		182738271FC6938800ED3AFB /* MHAsiNetworkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1827381D1FC6938800ED3AFB /* MHAsiNetworkItem.m */; };
+		182738281FC6938800ED3AFB /* MHAsiNetworkUrl.h.orig in Resources */ = {isa = PBXBuildFile; fileRef = 1827381F1FC6938800ED3AFB /* MHAsiNetworkUrl.h.orig */; };
+		182738291FC6938800ED3AFB /* MHNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 182738211FC6938800ED3AFB /* MHNetworkManager.m */; };
+		1827382A1FC6938800ED3AFB /* MHUploadParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 182738241FC6938800ED3AFB /* MHUploadParam.m */; };
+		1827382F1FC694AF00ED3AFB /* NSData+HTDataImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1827382E1FC694AF00ED3AFB /* NSData+HTDataImage.m */; };
 		DC5E00C95CB26FBFF0655EC7 /* libPods-HTDevelopTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E006EB8DEB96700D8AABD0B6 /* libPods-HTDevelopTools.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +97,23 @@
 		182738111FC657C200ED3AFB /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
 		182738121FC657C200ED3AFB /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
 		182738141FC6603C00ED3AFB /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		182738161FC6938800ED3AFB /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
+		182738171FC6938800ED3AFB /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
+		182738181FC6938800ED3AFB /* MHAsiNetworkDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkDefine.h; sourceTree = "<group>"; };
+		182738191FC6938800ED3AFB /* MHAsiNetworkDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkDelegate.h; sourceTree = "<group>"; };
+		1827381A1FC6938800ED3AFB /* MHAsiNetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkHandler.h; sourceTree = "<group>"; };
+		1827381B1FC6938800ED3AFB /* MHAsiNetworkHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHAsiNetworkHandler.m; sourceTree = "<group>"; };
+		1827381C1FC6938800ED3AFB /* MHAsiNetworkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkItem.h; sourceTree = "<group>"; };
+		1827381D1FC6938800ED3AFB /* MHAsiNetworkItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHAsiNetworkItem.m; sourceTree = "<group>"; };
+		1827381E1FC6938800ED3AFB /* MHAsiNetworkUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHAsiNetworkUrl.h; sourceTree = "<group>"; };
+		1827381F1FC6938800ED3AFB /* MHAsiNetworkUrl.h.orig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MHAsiNetworkUrl.h.orig; sourceTree = "<group>"; };
+		182738201FC6938800ED3AFB /* MHNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNetworkManager.h; sourceTree = "<group>"; };
+		182738211FC6938800ED3AFB /* MHNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHNetworkManager.m; sourceTree = "<group>"; };
+		182738221FC6938800ED3AFB /* MHNetwrok.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHNetwrok.h; sourceTree = "<group>"; };
+		182738231FC6938800ED3AFB /* MHUploadParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHUploadParam.h; sourceTree = "<group>"; };
+		182738241FC6938800ED3AFB /* MHUploadParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHUploadParam.m; sourceTree = "<group>"; };
+		1827382D1FC694AF00ED3AFB /* NSData+HTDataImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+HTDataImage.h"; sourceTree = "<group>"; };
+		1827382E1FC694AF00ED3AFB /* NSData+HTDataImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+HTDataImage.m"; sourceTree = "<group>"; };
 		4F329B422203F0B6ED940D41 /* Pods-HTDevelopTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTools/Pods-HTDevelopTools.debug.xcconfig"; sourceTree = "<group>"; };
 		B1566904F60CE7BF62C83EEC /* Pods-HTDevelopTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTools/Pods-HTDevelopTools.release.xcconfig"; sourceTree = "<group>"; };
 		E006EB8DEB96700D8AABD0B6 /* libPods-HTDevelopTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTDevelopTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +183,7 @@
 		182737C71FC55ECB00ED3AFB /* HTCategory */ = {
 			isa = PBXGroup;
 			children = (
-				182737C81FC55ECB00ED3AFB /* HTCategory.h */,
+				1827382C1FC6949800ED3AFB /* NSDataCategory */,
 				182737C91FC55ECB00ED3AFB /* NSDateCategory */,
 				182737CC1FC55ECB00ED3AFB /* NSStringCategory */,
 				182737D21FC55ECB00ED3AFB /* UIButtonCategory */,
@@ -170,6 +194,7 @@
 				182737E31FC55ECB00ED3AFB /* UITableViewCategory */,
 				182737E61FC55ECB00ED3AFB /* UIViewCategory */,
 				182737E91FC55ECB00ED3AFB /* UIViewControllerCategory */,
+				182737C81FC55ECB00ED3AFB /* HTCategory.h */,
 			);
 			path = HTCategory;
 			sourceTree = "<group>";
@@ -279,6 +304,7 @@
 		182737F41FC55ECB00ED3AFB /* OtherTools */ = {
 			isa = PBXGroup;
 			children = (
+				182738151FC6938800ED3AFB /* DataManager */,
 				1827380F1FC5704000ED3AFB /* HTOtherTools.h */,
 			);
 			path = OtherTools;
@@ -288,8 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				182738101FC6578200ED3AFB /* 自定义的购物车加减按钮(PPNumberButton) */,
-				182737F61FC55ECB00ED3AFB /* HTCustomView.h */,
 				182737F71FC55ECB00ED3AFB /* 自定义导航条控制器(类似云音乐的效果) */,
+				182737F61FC55ECB00ED3AFB /* HTCustomView.h */,
 			);
 			path = "自定义控件";
 			sourceTree = "<group>";
@@ -319,6 +345,37 @@
 				182738121FC657C200ED3AFB /* PPNumberButton.m */,
 			);
 			path = "自定义的购物车加减按钮(PPNumberButton)";
+			sourceTree = "<group>";
+		};
+		182738151FC6938800ED3AFB /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				182738161FC6938800ED3AFB /* MBProgressHUD+Add.h */,
+				182738171FC6938800ED3AFB /* MBProgressHUD+Add.m */,
+				182738181FC6938800ED3AFB /* MHAsiNetworkDefine.h */,
+				182738191FC6938800ED3AFB /* MHAsiNetworkDelegate.h */,
+				1827381A1FC6938800ED3AFB /* MHAsiNetworkHandler.h */,
+				1827381B1FC6938800ED3AFB /* MHAsiNetworkHandler.m */,
+				1827381C1FC6938800ED3AFB /* MHAsiNetworkItem.h */,
+				1827381D1FC6938800ED3AFB /* MHAsiNetworkItem.m */,
+				1827381E1FC6938800ED3AFB /* MHAsiNetworkUrl.h */,
+				1827381F1FC6938800ED3AFB /* MHAsiNetworkUrl.h.orig */,
+				182738201FC6938800ED3AFB /* MHNetworkManager.h */,
+				182738211FC6938800ED3AFB /* MHNetworkManager.m */,
+				182738221FC6938800ED3AFB /* MHNetwrok.h */,
+				182738231FC6938800ED3AFB /* MHUploadParam.h */,
+				182738241FC6938800ED3AFB /* MHUploadParam.m */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		1827382C1FC6949800ED3AFB /* NSDataCategory */ = {
+			isa = PBXGroup;
+			children = (
+				1827382D1FC694AF00ED3AFB /* NSData+HTDataImage.h */,
+				1827382E1FC694AF00ED3AFB /* NSData+HTDataImage.m */,
+			);
+			path = NSDataCategory;
 			sourceTree = "<group>";
 		};
 		69F3CBCE68CF384AC00B1C30 /* Frameworks */ = {
@@ -401,6 +458,7 @@
 			files = (
 				182737BD1FC55E7400ED3AFB /* LaunchScreen.storyboard in Resources */,
 				182737BA1FC55E7400ED3AFB /* Assets.xcassets in Resources */,
+				182738281FC6938800ED3AFB /* MHAsiNetworkUrl.h.orig in Resources */,
 				182737B51FC55E7400ED3AFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,17 +534,23 @@
 				182738071FC55ECB00ED3AFB /* UIViewController+HUD.m in Sources */,
 				182737C01FC55E7400ED3AFB /* main.m in Sources */,
 				182738081FC55ECB00ED3AFB /* UIViewController+NoDataView.m in Sources */,
+				1827382F1FC694AF00ED3AFB /* NSData+HTDataImage.m in Sources */,
+				182738261FC6938800ED3AFB /* MHAsiNetworkHandler.m in Sources */,
 				182738021FC55ECB00ED3AFB /* UIScreen+HTScreen.m in Sources */,
 				182737AF1FC55E7400ED3AFB /* AppDelegate.m in Sources */,
+				182738271FC6938800ED3AFB /* MHAsiNetworkItem.m in Sources */,
 				182738051FC55ECB00ED3AFB /* GDR_NoDataView.m in Sources */,
 				182738061FC55ECB00ED3AFB /* UIViewController+HTController.m in Sources */,
+				1827382A1FC6938800ED3AFB /* MHUploadParam.m in Sources */,
 				182737FC1FC55ECB00ED3AFB /* NSString+HTDecision.m in Sources */,
 				182738011FC55ECB00ED3AFB /* UILabel+HTLabel.m in Sources */,
 				182737FE1FC55ECB00ED3AFB /* Reachability.m in Sources */,
+				182738291FC6938800ED3AFB /* MHNetworkManager.m in Sources */,
 				182738031FC55ECB00ED3AFB /* UITableView+HTTable.m in Sources */,
 				182738131FC657C200ED3AFB /* PPNumberButton.m in Sources */,
 				182737FA1FC55ECB00ED3AFB /* NSDate+HTNSDate.m in Sources */,
 				182738041FC55ECB00ED3AFB /* UIView+HTUIView.m in Sources */,
+				182738251FC6938800ED3AFB /* MBProgressHUD+Add.m in Sources */,
 				182738091FC55ECB00ED3AFB /* HTCustomNavBarVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,5 +9,6 @@
 #ifndef HTOtherTools_h
 #define HTOtherTools_h
 
+#import "MHNetwrok.h"
 
 #endif /* HTOtherTools_h */

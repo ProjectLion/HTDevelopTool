@@ -1,0 +1,173 @@
+//
+//  MHAsiNetworkUrl.h
+//  MHProject
+//
+//  Created by MengHuan on 15/4/23.
+//  Copyright (c) 2015年 MengHuan. All rights reserved.
+//
+
+#ifndef MHProject_MHAsiNetworkUrl_h
+#define MHProject_MHAsiNetworkUrl_h
+//监听微信支付是否成功
+#define ORDER_PAY_NOTIFICATION @"wxpay"
+/**
+ *  正式环境
+ */
+
+#define API_HOST @"http://192.168.1.143:8080/app/"
+#define Imag_Str @"http://192.168.1.143:8080/"
+
+
+//#define API_HOST @"http://120.77.32.11:8080/jeesite/app/"
+//#define Imag_Str @"http://120.77.32.11:8080/jeesite"
+
+
+//接口路径全拼
+#define PATH(_path)  [NSString stringWithFormat:_path, API_HOST]
+
+
+//首页
+#define Zuliao_homelist  PATH(@"%@member/index")
+
+
+//我的订单记录
+#define Zuliao_orderList PATH(@"%@order/listByRecord")
+
+
+//搜索技师按距离排序
+#define SearchForJobNumWithDistance PATH(@"%@searchList/technicianByDistance")
+
+
+/*
+ *  个人中心
+ */
+#define Zuliao_myinfo  PATH(@"%@member/getUserInfo")
+//修改用户头像
+#define User_Photo     PATH(@"%@member/uploadImage")
+//修改昵称和性别
+#define User_NickAndSex PATH(@"%@member/uploadInfo")
+//修改密码
+#define User_ChangeCode PATH(@"%@member/updateUserPassword")
+//浏览记录
+#define Zuliao_record  PATH(@"%@browse/recordList")
+//收藏记录
+#define Zuliao_member  PATH(@"%@collect/listByMember")
+
+//单独技师路费计算
+#define Zuliao_techcare   PATH(@"%@techOrder/carefare")
+
+
+//单独技师列表
+#define Zuliao_shoptech   PATH(@"%@member/shopTechnicianList")
+
+//单独支付酒店
+#define Zuliao_hotelorder  PATH(@"%@hotelOrder/create")
+
+//技师+酒店路费计算
+#define Zuliao_hoteltechcare  PATH(@"%@hotelOrder/carefare")
+
+
+//对我的评价
+#define Zuliao_EvalList     PATH(@"%@eval/memberEvalList")
+//我的评价
+#define Zuliao_ToComment    PATH(@"%@order/listToComment")
+
+
+
+/*
+ *
+ *我的评价
+ *
+ */
+//评价列表
+#define Eva_List PATH(@"%@app/eval/listByType")
+//技师评价
+#define Tech_Eva PATH(@"%@eval/technician")
+//酒店评价
+#define Hotel_Eva PATH(@"%@eval/hotel")
+//足疗店加技师评价
+#define ShopAndTech PATH(@"%@eval/shop")
+//酒店加技师
+#define HotelAndTech PATH(@"%@eval/hotelAndTech")
+/*
+ *  我的
+ */
+//消费排行榜
+#define Rank PATH(@"%@rank/rank")
+//消费名次
+#define RankNo PATH(@"%@rank/rankNO")
+//我的优惠券
+#define MyCouponList PATH(@"%@getCouponsList")
+//我的消息
+#define MyMessageList PATH(@"%@getMessageList")
+//消息详情
+#define MyMessageContent PATH(@"%@getMessageDetail")
+
+//验证码接口
+#define Zuliao_code    PATH(@"%@tech/getInvalidate")
+#define Zuliao_Login   PATH(@"%@member/login")
+#define Zuliao_regin   PATH(@"%@member/register")
+
+//地址列表
+#define Zuliao_address   PATH(@"%@address/getList")
+//删除地址
+#define Zuliao_deaddress  PATH(@"%@address/delete")
+//设置默认地址
+#define Zuliao_setaddress PATH(@"%@address/setDefault")
+//添加地址
+#define Zuliao_addaddress PATH(@"%@address/create")
+//获取默认收货地址
+#define Zuliao_defaddress   PATH(@"%@address/getDefault")
+
+
+//**************收藏
+#define Zuliao_techcoll   PATH(@"%@collect/technician")
+#define Zuliao_hotecoll   PATH(@"%@collect/hotel")
+#define Zuliao_shopcoll   PATH(@"%@collect/shop")
+
+//技师详情
+#define Zuliao_techmessage  PATH(@"%@member/technicianDetail")
+//生成技师预约订单
+#define Zuliao_techOrder  PATH(@"%@techOrder/create")
+//生成足疗点技师预约订单
+#define Zuliao_pedtechorder PATH(@"%@appOrderdetailsShop/create")
+
+
+//治疗专区列表
+#define Zuliao_prelist    PATH(@"%@serviceClass/listByType")
+//治疗专区详情
+#define Zuliao_preInfo    PATH(@"%@serviceClass/details")
+//生成治疗专区订单
+#define Zuliao_treatorder   PATH(@"%@treatOrder/create")
+
+
+//技师距离排行列表
+#define Zuliao_distance   PATH(@"%@searchList/technicianByDistance")
+#define Zuliao_sentment   PATH(@"%@searchList/technicianBySentment")
+
+/*
+ *  订单
+ */
+#define Zuliao_orderlist  PATH(@"%@order/listByMember")
+
+
+//酒店列表
+#define Zuliao_hoteldice  PATH(@"%@searchList/hotelByDistance")
+#define Zuliao_hotelsent  PATH(@"%@searchList/hotelBySentment")
+//酒店详情
+#define Zuliao_hotelInfo  PATH(@"%@hotel/detail")
+
+//合作足疗点
+#define Zuliao_peddice    PATH(@"%@searchList/shopByDistance")
+#define Zuliao_pedsent    PATH(@"%@searchList/shopBySentment")
+//足疗点详情
+#define Zuliao_pedInfo    PATH(@"%@shop/detail")
+
+
+//微信支付接口
+#define WXPayUrl PATH(@"%@pay/WeChat")
+#define AliPayUrl PATH(@"%@pay/alipay")
+
+
+
+#endif
