@@ -72,6 +72,10 @@
     [btn ht_setButtonTitle:@"跳转" titleFont:FontWidth(14) titleColor:[UIColor redColor] forState:0];
     [btn addTarget:self action:@selector(clickBtn1) forControlEvents:UIControlEventTouchUpInside];
     [self.BGView addSubview:btn];
+    
+    UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(50, 100, 50, 50)];
+    [img ht_loadImageWithURL:@"http://36.111.166.37/zysh/userfiles/1/images/app/spot/appSpot/2017/11/wKgB3FFnmAqAG9H6ABQ-Re_ESKU12_320x172.jpg" placeholder:@"tuichu"];
+    [self.BGView addSubview:img];
 }
 
 - (void)clickBtn1{

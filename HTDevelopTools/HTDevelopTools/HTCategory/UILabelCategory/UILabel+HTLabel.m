@@ -40,17 +40,14 @@
         self.font = font;
     }
     
-    if (text == nil) {
-        self.text = @"";
-    }else{
-        self.text = text;
-    }
-    
     if (textColor == nil) {
         self.textColor = [UIColor blackColor];
     }else{
         self.textColor = textColor;
     }
+    if (text == nil) return;
+    
+    self.text = text;
 }
 /**
  设置首行缩进
