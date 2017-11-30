@@ -9,14 +9,18 @@
 #import "HTCustomNavBarVC.h"
 #import "UIScreen+HTScreen.h"
 
+#define ISIphoneX [UIScreen ht_isIphoneX]
+
 @interface HTCustomNavBarVC ()
 {
-    UIView *topView;
-    UIButton *backBtn;
-    UILabel *title;
-    UIButton *navRightBtn;
-    UILabel *rightTitle;
+    CGFloat nav_height;
+    CGFloat barY;
 }
+@property(nonatomic, strong)UIView *topView;
+@property(nonatomic, strong)UIButton *backBtn;
+@property(nonatomic, strong)UILabel *titleLabel;
+@property(nonatomic, strong)UIButton *navRightBtn;
+@property(nonatomic, strong)UILabel *rightTitle;
 @end
 
 @implementation HTCustomNavBarVC
@@ -126,27 +130,27 @@
 #pragma mark set方法
 - (void)setNavTitle:(NSString *)navTitle{
     _navTitle = navTitle;
-    title.text = _navTitle;
+    self.titleLabel.text = _navTitle;
 }
 
 - (void)setNavBackImageStr:(NSString *)navBackImageStr{
     _navBackImageStr = navBackImageStr;
-    [backBtn setImage:[UIImage imageNamed:_navRightImageStr] forState:UIControlStateNormal];
+    [self.backBtn setImage:[UIImage imageNamed:_navRightImageStr] forState:UIControlStateNormal];
 }
 
 - (void)setNavRightImageStr:(NSString *)navRightImageStr{
     _navRightImageStr = navRightImageStr;
-    [navRightBtn setImage:[UIImage imageNamed:_navRightImageStr] forState:UIControlStateNormal];
+    [self.navRightBtn setImage:[UIImage imageNamed:_navRightImageStr] forState:UIControlStateNormal];
 }
 
 - (void)setNavRightBtnTitleStr:(NSString *)navRightBtnTitleStr{
     _navRightBtnTitleStr = navRightBtnTitleStr;
-    rightTitle.text = _navRightBtnTitleStr;
+    self.rightTitle.text = _navRightBtnTitleStr;
 }
 
 - (void)setNavBackGround:(UIColor *)navBackGround{
     _navBackGround = navBackGround;
-    topView.backgroundColor = _navBackGround;
+    self.topView.backgroundColor = _navBackGround;
 }
 
 - (void)viewDidLoad {
@@ -154,64 +158,126 @@
     // Do any additional setup after loading the view.
 }
 /*******************************/
+#pragma mark 懒加载视图控件
+- (UIView *)topView{
+    if (_topView == nil) {
+        _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, nav_height)];
+    }
+    return _topView;
+}
 
+- (UIButton *)backBtn{
+    if (_backBtn == nil) {
+        _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _backBtn;
+}
+
+- (UILabel *)titleLabel{
+    if (_titleLabel == nil) {
+        _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(Width(125), barY, Width(130), 44)];
+    }
+    return _titleLabel;
+}
+
+- (UIButton *)navRightBtn{
+    if (_navRightBtn == nil) {
+        _navRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    }
+    return _navRightBtn;
+}
+
+- (UILabel *)rightTitle{
+    if (_rightTitle == nil) {
+        _rightTitle = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_W - Width(150), barY, Width(130), 44)];
+    }
+    return _rightTitle;
+}
+/**
+ *
+ * *   创建导航条   *
+ *
+ */
 - (void)creatNav{
     
-    topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_W, 64)];
-    topView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:topView];
+    nav_height = ISIphoneX ? 88.0 : 64.0;
+    barY = ISIphoneX ? 44.0 : 20.0;
     
-    backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backBtn setImage:[UIImage imageNamed:_navBackImageStr] forState:UIControlStateNormal];
-    backBtn.frame = CGRectMake(Width(10), 20, 44, 44);
-    [backBtn addTarget:self action:@selector(clickBackBtn) forControlEvents:UIControlEventTouchUpInside];
-    [topView addSubview:backBtn];
     
-    title = [[UILabel alloc] initWithFrame:CGRectMake(Width(125), 20, Width(130), 44)];
-    title.text = _navTitle;
-    title.font = FontWidth(17);
-    title.textColor = [UIColor blackColor];
-    title.textAlignment = 1;
-    [topView addSubview:title];
+    self.topView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:_topView];
     
-    navRightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [navRightBtn setImage:[UIImage imageNamed:_navRightImageStr] forState:UIControlStateNormal];
-    [navRightBtn addTarget:self action:@selector(clickNavRightBtn) forControlEvents:UIControlEventTouchUpInside];
-    navRightBtn.frame = CGRectMake(Width(320), 20, 44, 44);
-    [topView addSubview:navRightBtn];
     
-    rightTitle = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_W - Width(150), 20, Width(130), 44)];
-    rightTitle.text = _navRightBtnTitleStr;
-    rightTitle.font = FontWidth(16);
-    rightTitle.userInteractionEnabled = YES;
+    [self.backBtn setImage:[UIImage imageNamed:_navBackImageStr] forState:UIControlStateNormal];
+    _backBtn.frame = CGRectMake(Width(10), barY, 44, 44);
+    [_backBtn addTarget:self action:@selector(clickBackBtn) forControlEvents:UIControlEventTouchUpInside];
+    [_topView addSubview:_backBtn];
+    
+    self.titleLabel.text = _navTitle;
+    _titleLabel.font = FontWidth(17);
+    _titleLabel.textColor = [UIColor blackColor];
+    _titleLabel.textAlignment = 1;
+    [_topView addSubview:_titleLabel];
+    
+    
+    [self.navRightBtn setImage:[UIImage imageNamed:_navRightImageStr] forState:UIControlStateNormal];
+    [_navRightBtn addTarget:self action:@selector(clickNavRightBtn) forControlEvents:UIControlEventTouchUpInside];
+    _navRightBtn.frame = CGRectMake(Width(320), barY, 44, 44);
+    [_topView addSubview:_navRightBtn];
+    
+    
+    self.rightTitle.text = _navRightBtnTitleStr;
+    _rightTitle.font = FontWidth(16);
+    _rightTitle.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickNavRightBtn)];
-    [rightTitle addGestureRecognizer:tap];
-    rightTitle.textColor = [UIColor grayColor];
-    rightTitle.textAlignment = 2;
-    [topView addSubview:rightTitle];
+    [_rightTitle addGestureRecognizer:tap];
+    _rightTitle.textColor = [UIColor grayColor];
+    _rightTitle.textAlignment = 2;
+    [_topView addSubview:_rightTitle];
     
     if (_navRightBtnTitleStr == nil) {
-        [rightTitle setHidden:YES];
+        [_rightTitle setHidden:YES];
     }
     
     if (_navBackImageStr == nil) {
-        [backBtn setHidden:YES];
+        [_backBtn setHidden:YES];
     }
     if (_navRightImageStr == nil){
-        [navRightBtn setHidden:YES];
+        [_navRightBtn setHidden:YES];
     }
     
 }
 
+/**
+ *
+ * *   创建控制器背景视图   *
+ *
+ */
 - (void)creatMainBgView{
     if (_BGView == nil) {
-        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64)];
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, nav_height, SCREEN_W, SCREEN_H - nav_height)];
+        /**
+         *   如果是iPhone X并且tabBar没被隐藏
+         */
+        if (ISIphoneX) {
+            if (self.tabBarController.tabBar.isHidden == NO) {
+                [bgView setHt_height:SCREEN_H - nav_height - 83];
+            }
+        }else{
+            if (self.tabBarController.tabBar.isHidden == NO) {
+                [bgView setHt_height:SCREEN_H - nav_height - 49];
+            }
+        }
         _BGView = bgView;
         _BGView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_BGView];
     }
 }
-
+/**
+ *
+ * *   点击返回按钮   *
+ *
+ */
 - (void)clickBackBtn{
     NSArray *arr = self.navigationController.viewControllers;
     if (arr.count > 0) {
@@ -223,7 +289,11 @@
     }
 //    [self.navigationController popViewControllerAnimated:YES];
 }
-
+/**
+ *
+ * *   点击右边barItem,具体实现交给子类重写   *
+ *
+ */
 - (void)clickNavRightBtn{
     
 }
