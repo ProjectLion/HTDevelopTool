@@ -64,4 +64,12 @@
  @return UIColor
  */
 + (UIColor *)ht_colorWithHaxString:(NSString *)haxStr;
+
+/**
+ 判断当前设备是否是Iphone X
+
+ @return 是否是X
+ */
++ (BOOL)ht_isIphoneX;
+
 @end

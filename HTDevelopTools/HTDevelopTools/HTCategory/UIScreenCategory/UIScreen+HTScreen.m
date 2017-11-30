@@ -103,4 +103,17 @@
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
 }
 
+
+/**
+ 判断当前设备是否是iPhone X
+
+ @return 是否是X
+ */
++ (BOOL)ht_isIphoneX{
+    if (SCREEN_W == 375.0 && SCREEN_H == 812.0) {
+        return YES;
+    }
+    return NO;
+}
+
 @end
