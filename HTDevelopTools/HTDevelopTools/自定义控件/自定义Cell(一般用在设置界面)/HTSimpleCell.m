@@ -35,10 +35,12 @@
     return self;
 }
 ///实例化方法
+
 - (instancetype)initSimpleCellWithStyle:(HTSimpleCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     if (self != nil) {
         self.style = style;
+        
 //        [self creatView];
     }
     return self;
