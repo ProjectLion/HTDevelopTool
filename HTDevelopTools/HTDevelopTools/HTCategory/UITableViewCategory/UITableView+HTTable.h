@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <MJRefresh.h>
 
+typedef enum {
+    HTTableViewStyle_Top,
+    HTTableViewStyle_Mid,
+    HTTableViewStyle_Bottom,
+    HTTableViewStyle_Screen
+}HTTableViewStyle;
+
 @interface UITableView (HTTable)
 
 

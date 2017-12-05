@@ -20,7 +20,24 @@
  @return self
  */
 + (instancetype)ht_initTableWithX:(CGFloat)x y:(CGFloat)y width:(CGFloat)width height:(CGFloat)height style:(UITableViewStyle)style{
-    return [[self alloc] initWithFrame:CGRectMake(x, y, width, height) style:style];
+    if ([UIScreen ht_isIphoneX]) {
+        if (height <= SCREEN_H - 88.0) {
+            return [[self alloc] initWithFrame:CGRectMake(x, y, width, height) style:style];
+            
+        } else {
+            return [[self alloc] initWithFrame:CGRectMake(x, y, width, height - 88.0) style:style];
+            
+        }
+    }else{
+        if (height <= SCREEN_H - 64.0) {
+            return [[self alloc] initWithFrame:CGRectMake(x, y, width, height) style:style];
+            
+        } else {
+            return [[self alloc] initWithFrame:CGRectMake(x, y, width, height - 64.0) style:style];
+            
+        }
+    }
+//    return [[self alloc] initWithFrame:CGRectMake(x, y, width, height) style:style];
 }
 /**
  设置cell分割线 & table背景色
