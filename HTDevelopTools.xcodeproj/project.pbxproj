@@ -41,6 +41,7 @@
 		1827382F1FC694AF00ED3AFB /* NSData+HTDataImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1827382E1FC694AF00ED3AFB /* NSData+HTDataImage.m */; };
 		182738331FC6B30D00ED3AFB /* HTSimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182738321FC6B30D00ED3AFB /* HTSimpleCell.m */; };
 		182738361FC6D0B000ED3AFB /* HTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182738351FC6D0B000ED3AFB /* HTTableViewController.m */; };
+		18AD4F4C1FD785040036BDF5 /* HTDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AD4F4B1FD785040036BDF5 /* HTDatePickerView.m */; };
 		DC5E00C95CB26FBFF0655EC7 /* libPods-HTDevelopTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E006EB8DEB96700D8AABD0B6 /* libPods-HTDevelopTools.a */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,8 @@
 		182738321FC6B30D00ED3AFB /* HTSimpleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSimpleCell.m; sourceTree = "<group>"; };
 		182738341FC6D0B000ED3AFB /* HTTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTableViewController.h; sourceTree = "<group>"; };
 		182738351FC6D0B000ED3AFB /* HTTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTableViewController.m; sourceTree = "<group>"; };
+		18AD4F4A1FD785040036BDF5 /* HTDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDatePickerView.h; sourceTree = "<group>"; };
+		18AD4F4B1FD785040036BDF5 /* HTDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDatePickerView.m; sourceTree = "<group>"; };
 		4F329B422203F0B6ED940D41 /* Pods-HTDevelopTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTools/Pods-HTDevelopTools.debug.xcconfig"; sourceTree = "<group>"; };
 		B1566904F60CE7BF62C83EEC /* Pods-HTDevelopTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HTDevelopTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-HTDevelopTools/Pods-HTDevelopTools.release.xcconfig"; sourceTree = "<group>"; };
 		E006EB8DEB96700D8AABD0B6 /* libPods-HTDevelopTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HTDevelopTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -319,6 +322,7 @@
 		182737F51FC55ECB00ED3AFB /* 自定义控件 */ = {
 			isa = PBXGroup;
 			children = (
+				18AD4F491FD784580036BDF5 /* 自定义时间选择器 */,
 				182738301FC6B25E00ED3AFB /* 自定义Cell(一般用在设置界面) */,
 				182738101FC6578200ED3AFB /* 自定义的购物车加减按钮(PPNumberButton) */,
 				182737F71FC55ECB00ED3AFB /* 自定义导航条控制器(类似云音乐的效果) */,
@@ -394,6 +398,15 @@
 				182738321FC6B30D00ED3AFB /* HTSimpleCell.m */,
 			);
 			path = "自定义Cell(一般用在设置界面)";
+			sourceTree = "<group>";
+		};
+		18AD4F491FD784580036BDF5 /* 自定义时间选择器 */ = {
+			isa = PBXGroup;
+			children = (
+				18AD4F4A1FD785040036BDF5 /* HTDatePickerView.h */,
+				18AD4F4B1FD785040036BDF5 /* HTDatePickerView.m */,
+			);
+			path = "自定义时间选择器";
 			sourceTree = "<group>";
 		};
 		69F3CBCE68CF384AC00B1C30 /* Frameworks */ = {
@@ -542,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18AD4F4C1FD785040036BDF5 /* HTDatePickerView.m in Sources */,
 				182738331FC6B30D00ED3AFB /* HTSimpleCell.m in Sources */,
 				182737B81FC55E7400ED3AFB /* HTDevelopTools.xcdatamodeld in Sources */,
 				182737FF1FC55ECB00ED3AFB /* UIDevice+HTDevice.m in Sources */,
