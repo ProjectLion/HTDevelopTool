@@ -2,11 +2,11 @@
 ##一、这是一个自己整理和封装的一些常用开发工具类。<br>
 * clone项目后将HTDevelopTools文件夹拖到项目中即可使用。<br>
 * 其中依赖于<br>
-        [YYWebImage]<br>
-        [AFNetworking]<br>
-        [MBProgressHUD]<br>
-        [MJRefresh]<br>
-        致谢！<br>
+        `YYWebImage`<br>
+        `AFNetworking`<br>
+        `MBProgressHUD`<br>
+        `MJRefresh`<br>
+        致谢!<br>
 
 # PPNumberButton
 * 添加垂直排列
