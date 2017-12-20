@@ -128,6 +128,20 @@
 
 /*******************************/
 #pragma mark set方法
+- (void)setIsHaveTabBar:(BOOL)isHaveTabBar{
+    _isHaveTabBar = isHaveTabBar;
+    /**
+     *   如果是iPhone X并且tabBar没被隐藏
+     */
+    if (_isHaveTabBar) {
+        if (ISIphoneX) {
+            _BGView.ht_height = SCREEN_H - nav_height - 83;
+        }else{
+            _BGView.ht_height = SCREEN_H - nav_height - 49;
+        }
+    }
+}
+
 - (void)setNavTitle:(NSString *)navTitle{
     _navTitle = navTitle;
     self.titleLabel.text = _navTitle;
@@ -256,18 +270,6 @@
 - (void)creatMainBgView{
     if (_BGView == nil) {
         UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, nav_height, SCREEN_W, SCREEN_H - nav_height)];
-        /**
-         *   如果是iPhone X并且tabBar没被隐藏
-         */
-        if (ISIphoneX) {
-            if (self.tabBarController.tabBar.isHidden == NO) {
-                [bgView setHt_height:SCREEN_H - nav_height - 83];
-            }
-        }else{
-            if (self.tabBarController.tabBar.isHidden == NO) {
-                [bgView setHt_height:SCREEN_H - nav_height - 49];
-            }
-        }
         _BGView = bgView;
         _BGView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_BGView];

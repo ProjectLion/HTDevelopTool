@@ -26,7 +26,6 @@
             
         } else {
             return [[self alloc] initWithFrame:CGRectMake(x, y, width, height - 88.0) style:style];
-            
         }
     }else{
         if (height <= SCREEN_H - 64.0) {

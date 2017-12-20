@@ -27,6 +27,11 @@ typedef enum : NSUInteger {
 
 @property(nonatomic, weak)UIView *BGView;
 
+/**
+ 当前控制器的tabBar时候被隐藏(默认为NO)
+ */
+@property(nonatomic, assign)BOOL isHaveTabBar;
+
 ///若没有使用自定义的init方法创建 则需要自己配置以下的属性
 /**
  导航条背景色
