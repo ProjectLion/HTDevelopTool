@@ -67,4 +67,13 @@
  */
 //+ (NSDate *)ht_transfDateFormatToDate:(NSDate *)date;
 
+
+/**
+ 将时间字符串转为NSDate格式
+
+ @param dateString 时间字符串
+ @return NSDate
+ */
++ (NSDate *)ht_transfStringToDate:(NSString *)dateString withFormat:(NSString *)format;
+
 @end

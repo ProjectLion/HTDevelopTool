@@ -42,5 +42,19 @@
     return [components second];
 }
 
+/**
+ 将时间字符串转为NSDate格式
+ 
+ @param dateString 时间字符串
+ @return NSDate
+ */
++ (NSDate *)ht_transfStringToDate:(NSString *)dateString withFormat:(NSString *)format{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    [dateFormatter setDateFormat:format];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    return date;
+}
 
 @end
