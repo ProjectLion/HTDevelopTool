@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 //屏幕宽高
-#define SCREEN_W [UIScreen ht_screenWidth]
-#define SCREEN_H [UIScreen ht_screenHeight]
-//宽高适配
-#define Width(w) [UIScreen ht_setWidth:(w)]
-#define Height(h) [UIScreen ht_setHeight:(h)]
-//字体 颜色
-#define FontWidth(fw) [UIFont systemFontOfSize:Width(fw)]
-#define FontHeight(fh) [UIFont systemFontOfSize:Height(fh)]
-#define colorForString(str) [UIScreen ht_colorWithHaxString:str]
+//#define SCREEN_W [UIScreen ht_screenWidth]
+//#define SCREEN_H [UIScreen ht_screenHeight]
+////宽高适配
+//#define Width(w) [UIScreen ht_setWidth:(w)]
+//#define Height(h) [UIScreen ht_setHeight:(h)]
+////字体 颜色
+//#define FontWidth(fw) [UIFont systemFontOfSize:Width(fw)]
+//#define FontHeight(fh) [UIFont systemFontOfSize:Height(fh)]
+//#define colorForString(str) [UIScreen ht_colorWithHaxString:str]
 
 @interface UIScreen (HTScreen)
 
