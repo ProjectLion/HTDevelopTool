@@ -108,4 +108,37 @@
     self.center = CGPointMake(self.center.x, ht_centerY);
 }
 
+- (void)ht_addBorderWith:(BorderPosition)position borderColor:(UIColor *)color borderWidth:(CGFloat)width{
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    switch (position) {
+        case BorderAll:
+            self.layer.borderColor = color.CGColor;
+            self.layer.borderWidth = width;
+            break;
+        case BorderOnTop:
+            [path moveToPoint:CGPointMake(0.0, 0.0)];
+            [path addLineToPoint:CGPointMake(self.ht_width, 0.0)];
+        case BorderOnLeft:
+            [path moveToPoint:CGPointMake(0.0, self.ht_height)];
+            [path addLineToPoint:CGPointMake(0.0, 0.0)];
+        case BorderOnBottom:
+            [path moveToPoint:CGPointMake(0.0, self.ht_height)];
+            [path addLineToPoint:CGPointMake(self.ht_width, self.ht_height)];
+        case BorderOnRight:
+            [path moveToPoint:CGPointMake(self.ht_width, 0.0)];
+            [path addLineToPoint:CGPointMake(self.ht_width, self.ht_height)];
+        default:
+            break;
+    }
+    CAShapeLayer * shapeLayer = [CAShapeLayer layer];
+    shapeLayer.strokeColor = color.CGColor;
+    shapeLayer.fillColor  = [UIColor clearColor].CGColor;
+    /// 添加路径
+    shapeLayer.path = path.CGPath;
+    /// 线宽度
+    shapeLayer.lineWidth = width;
+    
+    [self.layer addSublayer:shapeLayer];
+}
+
 @end

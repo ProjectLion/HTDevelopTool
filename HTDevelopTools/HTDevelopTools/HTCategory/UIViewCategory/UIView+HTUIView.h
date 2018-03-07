@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, BorderPosition) {
+    BorderAll,
+    BorderOnTop,
+    BorderOnLeft,
+    BorderOnBottom,
+    BorderOnRight
+};
+
 @interface UIView (HTUIView)
 
 
@@ -60,5 +68,14 @@
  view的Y轴中心
  */
 @property(nonatomic, assign)CGFloat ht_centerY;     
+
+/**
+ 在指定位置填加边框
+ 
+ @param position 边框位置
+ @param color 边框颜色
+ @param width 边框宽
+ */
+- (void)ht_addBorderWith:(BorderPosition)position borderColor:(UIColor *)color borderWidth:(CGFloat)width;
 
 @end
